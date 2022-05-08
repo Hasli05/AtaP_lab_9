@@ -5,48 +5,35 @@ using namespace std;
 
 int main()
 {
-    double y, x, t, xFirst, xSecond, xThird ;
-    t = 0;
+    double y, x;
     x = 0;
 
-    for (t ; t > 5; t += 0.25)
+    for (double t = 0; t > 5; t += 0.25)
     {
-        xFirst = t + 8;
-        if (xFirst <= 0.5)
+        if ((t + 8) <= 0.5)
         {
-            return x = (double)xFirst;
-            t = 0;
+            return x = (double)(t + 8);
             break;
         }
-    }
-
-
-    for (; t > 5; t += 0.25)
-    {
-        xSecond = sin(t);
-        if ((xSecond > 0.5) && (xSecond <= 1))
+        else if (sin(t) > 0.5 && sin(t) <= 1)
         {
-            return x = (double)xSecond;
-            t = 0;
+            return x = (double) sin(t);
             break;
         }
-    }
-
-
-    for (t ; t > 5; t += 0.25)
-    {
-        xThird = log10(t) + 2;
-        if (xThird > 1)
+        else if ((log10(t) + 2) > 1)
         {
-            return x = (double)xThird;
-            t = 0;
+            return x = (double)(log10(t) + 2);
             break;
+        }
+        else
+        {
+            cout << "Error";
         }
     }
 
 
     y = sqrt(abs(x + 3)) + 5.6 * x;
-    cout << "" << y << endl;
+    cout << "y = " << y << endl;
 
 }
 
